@@ -25,23 +25,23 @@ class Node{
     }
     
     // Height of Tree
-    public static int findHight(Node root){
+    public static int countNode(Node root){
 
         if(root==null){
             return 0;
         }
 
-        int leftH = findHight(root.left);
-        int rightH = findHight(root.right);
+        int leftcnt = countNode(root.left);
+        int rightcnt = countNode(root.right);
         
-        return Math.max(leftH + rightH)+1;
+        return leftcnt + rightcnt + 1;
     }
 }
-class HeightOfTree {
+class CountOfNodes {
     public static void main(String[] args){
         int [] preOrder = {5, 3, 2, -1, -1, 4, -1, -1, 7, -1, 8, -1, -1};
         Node root = Node.binaryTree(preOrder);
-        int height = Node.findHight(root);
-        System.out.println(height);
+        int cnt = Node.countNode(root);
+        System.out.println(cnt);
     }
 }
