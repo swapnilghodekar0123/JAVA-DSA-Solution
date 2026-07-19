@@ -25,23 +25,23 @@ class Node{
     }
     
     // Height of Tree
-    public static int countNode(Node root){
+    public static int sumOfNode(Node root){
 
         if(root==null){
             return 0;
         }
 
-        int leftcnt = countNode(root.left);
-        int rightcnt = countNode(root.right);
+        int leftSum = sumOfNode(root.left);
+        int rightSum = sumOfNode(root.right);
         
-        return leftcnt + rightcnt +1;
+        return leftSum + rightSum + root.val;
     }
 }
-class HeightOfTree {
+class SumOfNodes{
     public static void main(String[] args){
         int [] preOrder = {5, 3, 2, -1, -1, 4, -1, -1, 7, -1, 8, -1, -1};
         Node root = Node.binaryTree(preOrder);
-        int cnt = Node.countNode(root);
-        System.out.println(cnt);
+        int sum = Node.sumOfNode(root);
+        System.out.println(sum);
     }
 }
